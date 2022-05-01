@@ -24,6 +24,10 @@ result = cv2.resize(cv2.imread("../download.jpeg"),(SIZE,SIZE))/255
 OMODE = True
 PMODE = True
 amount = 0.1
+with open("weird.txt","r") as file:          
+    weights[1] = np.array(eval(file.read()))
+with open("drugs.txt","r") as file:
+    weights[0] = np.array(eval(file.read()))
 
 while(True):
     out = np.zeros((SIZE,SIZE,3))
